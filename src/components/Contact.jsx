@@ -11,8 +11,8 @@ const Contact = () => {
   
 
   return (
-    <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-      <motion.div
+    <div className=" h-[800px] xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+      {/* <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
       >
@@ -21,41 +21,17 @@ const Contact = () => {
         
         
        
-      </motion.div>
-{/* <EarthCanvas /> */}
-      <motion.div
+      </motion.div> */}
+<EarthCanvas />
+      {/* <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
       >
         <p className={styles.heroSubText}>Jouer 2</p>
         <h3 className={styles.heroHeadText}>star</h3>
         
-      </motion.div>
-      {/* <motion.div
-  variants={slideIn("left", "tween", 0.2, 1)}
-  className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
->
-  <p className={styles.heroSubText}>Jouer 1</p>
-  {selectedCharacters.length >= 1 && (
-    <>
-      <h3 className={styles.heroHeadText}>{selectedCharacters[0].name}</h3>
-      <img src={selectedCharacters[0].image} alt={selectedCharacters[0].name} />
-    </>
-  )}
-</motion.div>
-
-<motion.div
-  variants={slideIn("right", "tween", 0.2, 1)}
-  className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
->
-  <p className={styles.heroSubText}>Jouer 2</p>
-  {selectedCharacters.length === 2 && (
-    <>
-      <h3 className={styles.heroHeadText}>{selectedCharacters[1].name}</h3>
-      <img src={selectedCharacters[1].image} alt={selectedCharacters[1].name} />
-    </>
-  )}
-</motion.div>*/}
+      </motion.div> */}
+      
     </div>
 
   ); 

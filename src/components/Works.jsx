@@ -1,4 +1,4 @@
-import {compareAndAnnounceWinner, fadeIn, textVariant} from "../utils/motion";
+import { compareAndAnnounceWinner, fadeIn, textVariant } from "../utils/motion";
 
 import { SectionWrapper } from "../hoc";
 import { Tilt } from "react-tilt";
@@ -68,8 +68,6 @@ const ProjectCard = ({
 };
 
 const Works = () => {
-  
-
   const [selectedCharacters, setSelectedCharacters] = useState([]);
 
   const [gameResult, setGameResult] = useState(null);
@@ -77,34 +75,84 @@ const Works = () => {
 
   const handleCharacterSelect = (character) => {
     if (selectedCharacters.includes(character)) {
-   
       const updatedCharacters = selectedCharacters.filter(
         (char) => char !== character
       );
       setSelectedCharacters(updatedCharacters);
     } else if (selectedCharacters.length < 2) {
-      
       setSelectedCharacters([...selectedCharacters, character]);
     }
   };
 
-
-
   const handlePlayButtonClick = () => {
- 
     if (selectedCharacters.length === 2) {
       const [player1, player2] = selectedCharacters;
       const result = compareAndAnnounceWinner(player1.name, player2.name);
 
- 
       setGameResult(result);
     } else {
-      
       setGameResult("Seleccione 2 jugadores para jugar.");
     }
   };
   return (
     <>
+      
+
+      <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+        <motion.div
+          variants={slideIn("left", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+        >
+          <h3 className={styles.heroHeadText}>
+            {selectedCharacters.length >= 1
+              ? selectedCharacters[0].name
+              : " "}
+          </h3>
+        </motion.div>
+        <button
+          className="text-center justify-center w-[200px] h-[200px]"
+          onClick={handlePlayButtonClick}
+        >
+          <img src={versus} alt="versus" />
+        </button>
+        {/* <EarthCanvas /> */}
+        <motion.div
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+        >
+          <h3 className={styles.heroHeadText}>
+            {selectedCharacters.length === 2
+              ? selectedCharacters[1].name
+              : ""}
+          </h3>
+        </motion.div>
+      </div>
+
+      <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+        <motion.div
+          variants={slideIn("left", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+        >
+          <h4 className={styles.heroHeadText}>
+            {gameResult && (
+              <span
+                style={{
+                  color: gameResult.result.includes("gagne") ? "red" : "black",
+                }}
+              >
+                {gameResult.result}
+              </span>
+            )}
+          </h4>
+          {gameResult && (
+            <>
+              <p>Score : {gameResult.randomA}</p>
+              <p>Score : {gameResult.randomB}</p>
+            </>
+          )}
+        </motion.div>
+      </div>
+
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Cards</p>
         <h2 className={styles.sectionHeadText}>Stars</h2>
@@ -130,62 +178,6 @@ const Works = () => {
             isSelected={selectedCharacters.includes(project)}
           />
         ))}
-      </div>
-
-      <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-      
-        <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
-        >
-          
-          <h3 className={styles.heroHeadText}>
-    {selectedCharacters.length >= 1 ? selectedCharacters[0].name : "Sélectionner une star "}
-  </h3>
-        </motion.div>
-        <button className="text-center justify-center w-[200px] h-[200px]"  onClick={handlePlayButtonClick}>
-          <img src={versus} alt="versus" /></button>
-        {/* <EarthCanvas /> */}
-        <motion.div
-          variants={slideIn("right", "tween", 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
-        >
-          
-          <h3 className={styles.heroHeadText}>
-    {selectedCharacters.length === 2 ? selectedCharacters[1].name : "Sélectionner une autre star "}
-  </h3>
-        </motion.div>
-       
-      </div>
-
-      <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-        <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
-        >
-        
-          <h4 className={styles.heroHeadText}>
-            {gameResult && (
-              <span
-                style={{
-                  color: gameResult.result.includes("gagne") ? "red" : "black",
-                }}
-              >
-                {gameResult.result}
-              </span>
-            )}
-          </h4>
-          {gameResult && (
-            <>
-              <p>Score : {gameResult.randomA}</p>
-              <p>Score : {gameResult.randomB}</p>
-              
-            </>
-          )}
-
-          
-        </motion.div>
-        
       </div>
     </>
   );

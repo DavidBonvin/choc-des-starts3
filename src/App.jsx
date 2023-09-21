@@ -11,7 +11,6 @@ import {
 } from "./components";
 
 import { BrowserRouter } from "react-router-dom";
-import { useState } from "react";
 
 const App = () => {
 
@@ -26,14 +25,16 @@ const App = () => {
             <h1 className="text-end">Choc des starts</h1>
             {/* <Hero /> */}
           </div>
-           <About />
+          
           {/*<Experience /> */}
           {/* <Tech /> */}
           
           {/* <Feedbacks /> */}
           <div className="relative z-0">
-             {/* <Contact  /> */}
+             
              <Works />
+             <Contact  /> 
+             <About />
             <StarsCanvas /> 
           </div>
         </div>

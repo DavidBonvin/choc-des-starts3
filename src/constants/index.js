@@ -35,17 +35,18 @@ import {
 } from "../assets";
 
 export const navLinks = [
- {
-   id: "about",
-   title: "Jouer",
- },
+ 
  {
    id: "cards",
-   title: "Défi",
+   title: "Stars",
  },
  {
    id: "contact",
-   title: "Les Stars",
+   title: "Planet Animé",
+ },
+ {
+   id: "about",
+   title: "A propos du jeu",
  },
 ];
 

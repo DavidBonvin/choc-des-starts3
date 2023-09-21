@@ -107,7 +107,11 @@ export function compareAndAnnounceWinner(A, B) {
   console.log(`Score B: ${B} avec ${randomB}`);
   console.log(`Result: ${result}`);
 
-  return result;
+  return {
+    result,
+    randomA,
+    randomB,
+  };
 }
 
 // Example usage:

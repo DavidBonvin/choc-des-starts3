@@ -71,34 +71,36 @@ const Works = () => {
   
 
   const [selectedCharacters, setSelectedCharacters] = useState([]);
-  const [winner, setWinner] = useState(null); // Estado para almacenar al ganador
+
+  const [gameResult, setGameResult] = useState(null);
   console.log("jugadores selecionador :", selectedCharacters);
 
   const handleCharacterSelect = (character) => {
     if (selectedCharacters.includes(character)) {
-      // El personaje ya está en la lista, así que lo eliminamos.
+   
       const updatedCharacters = selectedCharacters.filter(
         (char) => char !== character
       );
       setSelectedCharacters(updatedCharacters);
     } else if (selectedCharacters.length < 2) {
-      // El personaje no está en la lista y hay menos de 2 seleccionados, así que lo agregamos.
+      
       setSelectedCharacters([...selectedCharacters, character]);
     }
   };
 
-   // Función para manejar el clic en el botón "Boton para jugar"
+
+
   const handlePlayButtonClick = () => {
-    // Verificar si hay exactamente 2 jugadores seleccionados
+ 
     if (selectedCharacters.length === 2) {
       const [player1, player2] = selectedCharacters;
       const result = compareAndAnnounceWinner(player1.name, player2.name);
 
-      // Actualizar el estado con el resultado del juego
-      setWinner(result);
+ 
+      setGameResult(result);
     } else {
-      // Si no hay 2 jugadores seleccionados, mostrar un mensaje de error
-      setWinner("Seleccione 2 jugadores para jugar.");
+      
+      setGameResult("Seleccione 2 jugadores para jugar.");
     }
   };
   return (
@@ -131,50 +133,29 @@ const Works = () => {
       </div>
 
       <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+      
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
         >
-          <p className={styles.heroSubText}>Jouer 1</p>
+          
           <h3 className={styles.heroHeadText}>
     {selectedCharacters.length >= 1 ? selectedCharacters[0].name : "Sélectionner une star "}
   </h3>
         </motion.div>
+        <button className="text-center justify-center w-[200px] h-[200px]"  onClick={handlePlayButtonClick}>
+          <img src={versus} alt="versus" /></button>
         {/* <EarthCanvas /> */}
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
         >
-          <p className={styles.heroSubText}>Jouer 2</p>
+          
           <h3 className={styles.heroHeadText}>
     {selectedCharacters.length === 2 ? selectedCharacters[1].name : "Sélectionner une autre star "}
   </h3>
         </motion.div>
-        {/* <motion.div
-  variants={slideIn("left", "tween", 0.2, 1)}
-  className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
->
-  <p className={styles.heroSubText}>Jouer 1</p>
-  {selectedCharacters.length >= 1 && (
-    <>
-      <h3 className={styles.heroHeadText}>{selectedCharacters[0].name}</h3>
-      <img src={selectedCharacters[0].image} alt={selectedCharacters[0].name} />
-    </>
-  )}
-</motion.div>
-
-<motion.div
-  variants={slideIn("right", "tween", 0.2, 1)}
-  className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
->
-  <p className={styles.heroSubText}>Jouer 2</p>
-  {selectedCharacters.length === 2 && (
-    <>
-      <h3 className={styles.heroHeadText}>{selectedCharacters[1].name}</h3>
-      <img src={selectedCharacters[1].image} alt={selectedCharacters[1].name} />
-    </>
-  )}
-</motion.div>*/}
+       
       </div>
 
       <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -182,20 +163,26 @@ const Works = () => {
           variants={slideIn("left", "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
         >
-          <p className={styles.heroSubText}>Vamos a jugar</p>
-          <h3 className={styles.heroHeadText}>Commpetence</h3>
-          <button onClick={handlePlayButtonClick}>Boton para jugar</button>
-
-          <p>Resultat</p>
-          <h4>Jugador ganador</h4>
-          <img src="" alt="img del jugador ganador" />
-          {winner && (
+        
+          <h4 className={styles.heroHeadText}>
+            {gameResult && (
+              <span
+                style={{
+                  color: gameResult.result.includes("gagne") ? "red" : "black",
+                }}
+              >
+                {gameResult.result}
+              </span>
+            )}
+          </h4>
+          {gameResult && (
             <>
-              <p>{winner}</p>
-              {/* Aquí puedes mostrar la imagen del ganador, asegúrate de tener la URL de la imagen */}
-              {/* <img src="URL_DE_LA_IMAGEN" alt="img del jugador ganador" /> */}
+              <p>Score : {gameResult.randomA}</p>
+              <p>Score : {gameResult.randomB}</p>
+              
             </>
           )}
+
           
         </motion.div>
         

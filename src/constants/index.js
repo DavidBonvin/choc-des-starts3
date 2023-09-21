@@ -14,7 +14,9 @@ import {
   jackson,
   javascript,
   jobit,
+  kylianMbappe,
   lebron,
+  luffy,
   meta,
   mobile,
   mongodb,
@@ -23,10 +25,13 @@ import {
   porfolio_2,
   reactjs,
   redux,
+  sherlockHolmes,
   shopify,
   starbucks,
+  superman,
   tailwind,
   tesla,
+  therock,
   threejs,
   tripguide,
   typescript,
@@ -249,7 +254,7 @@ const projects = [
 },
 ];
 
-const stars = [
+const stars1= [
   {
     name: "Cristiano Ronaldo",
     description:
@@ -336,6 +341,229 @@ const stars = [
     image: usainBolt,
     source_code_link: "https://www.davidbovin.com/",
   },
+]
+
+const stars = [
+  {
+    name: "Cristiano Ronaldo",
+    description:
+      "Surnommé CR7, est un footbaleur international portugais qui joue au poste d'attaquant à Al-Nasser",
+    tags: [
+      {
+        name: "Force 95",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Vitesse 97",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Technique 92",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: cr7,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+  {
+    name: "Michael Jackson ",
+    description:
+      "c'est un auteur-compositeur-interprète, danseur-chorégraphe et acteur américain",
+    tags: [
+      {
+        name: "Agilité 95",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Rapidité 98",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Présicion 90",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: jackson,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+  {
+    name: "Lebron James",
+    description:
+      "c'est un joueur professionnel américain de basket-ball qui aux Lakers de Los Angeles en NBA",
+    tags: [
+      {
+        name: "Force 95",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Endurance 98",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Agilité 92",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: lebron,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+  {
+    name: "Usain Bolt ",
+    description:
+      "c'est spécialiste des épreuves de sprint, généralement considéré comme le plus grand sprinter de tous les temps.",
+    tags: [
+      {
+        name: "Vitesse 99",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Agilité 90",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Endurance 80",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: usainBolt,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+  {
+    name: "The Rock ",
+    description:
+      "c'est est un acteur, producteur, catcheur américano-canadien",
+    tags: [
+      {
+        name: "Force 95",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Endurance 90",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Agilité 85",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: therock,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+  {
+    name: "Kylian Mbappé ",
+    description:
+      "c'est un footballeur international français qui joue au poste d'attaquant au Paris Saint-Germain.",
+    tags: [
+      {
+        name: "Vitesse 97",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Agilité 92",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Technique 90",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: kylianMbappe,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+  {
+    name: "Sherlock Holmes",
+    description:
+      "c'est un personnage de fiction britannique dans le roman policier",
+    tags: [
+      {
+        name: "Intelligence tactique 98",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Precision de perception 95  ",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Agilité 85",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: sherlockHolmes,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+  {
+    name: "Monkey D. Luffy",
+    description:
+      "surnommé de manière récurrente Luffy au chapeau de paille, un personnage de fiction et principal protagoniste de la franchise japonaise One Piece ",
+    tags: [
+      {
+        name: "Force 95",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Elasticité 98",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Endurance 90",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: luffy,
+    source_code_link: "https://www.davidbovin.com/",
+  },
+
+    {
+      name: "Superman",
+      description:
+        "c'est un super-héros de bande dessinée américaine appartenant au monde imaginaire.",
+      tags: [
+        {
+          name: "Force 100",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Vitesse 95 ",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Résistance 98",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: superman,
+      source_code_link: "https://www.davidbovin.com/",
+    },
+    // {
+    //   name: "Michael Jordan",
+    //   description:
+    //     "c'est est un joueur de basket-ball américain ayant évolué dans le championnat nord-américain professionnel de basket-ball",
+    //   tags: [
+    //     {
+    //       name: "Agilité 95",
+    //       color: "blue-text-gradient",
+    //     },
+    //     {
+    //       name: "Vitesse 90",
+    //       color: "green-text-gradient",
+    //     },
+    //     {
+    //       name: "Coordination 92",
+    //       color: "pink-text-gradient",
+    //     },
+    //   ],
+    //   image: jordan,
+    //   source_code_link: "https://www.davidbovin.com/",
+    // },  
+
+  
 ]
 
 

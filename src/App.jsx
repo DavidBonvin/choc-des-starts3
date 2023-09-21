@@ -11,8 +11,12 @@ import {
 } from "./components";
 
 import { BrowserRouter } from "react-router-dom";
+import { useState } from "react";
 
 const App = () => {
+
+
+  
   return (
     
       <BrowserRouter>
@@ -25,10 +29,11 @@ const App = () => {
            <About />
           {/*<Experience /> */}
           {/* <Tech /> */}
-          <Works />
+          
           {/* <Feedbacks /> */}
           <div className="relative z-0">
-             <Contact  />
+             {/* <Contact  /> */}
+             <Works />
             <StarsCanvas /> 
           </div>
         </div>

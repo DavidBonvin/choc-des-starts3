@@ -86,3 +86,28 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
    },
  };
 };
+
+export function compareAndAnnounceWinner(A, B) {
+  // Generate random numbers for A and B
+  const randomA = Math.floor(Math.random()*11);
+  const randomB = Math.floor(Math.random()*11);
+
+  // Compare the random numbers and announce the winner
+  let result = "";
+  if (randomA > randomB) {
+    result = `${A} A gagne !!!`;
+  } else if (randomB > randomA) {
+    result = `${B} A gagne !!!`;
+  } else {
+    result = "Egalité !!! ";
+  }
+
+  // Display the random numbers for A and B along with the result
+  console.log(`Score A:${A} avec ${randomA}`);
+  console.log(`Score B: ${B} avec ${randomB}`);
+  console.log(`Result: ${result}`);
+
+  return result;
+}
+
+// Example usage:

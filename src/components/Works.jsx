@@ -3,6 +3,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
+import { slideIn } from "../utils/motion";
 import { stars } from "../constants";
 import { styles } from "../styles";
 import { useState } from "react";
@@ -18,12 +19,10 @@ const ProjectCard = ({
   onSelect,
   isSelected,
 }) => {
-
   const cardClasses = isSelected
-  ? "bg-green-500 w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-  : "black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer";
+    ? "bg-green-500 w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+    : "black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer";
 
-  
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -41,10 +40,7 @@ const ProjectCard = ({
             className="w-full h-full object-cover rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-end card-img_hover">
-            <div
-              onClick={onSelect}
-              className={cardClasses}
-            >
+            <div onClick={onSelect} className={cardClasses}>
               <img
                 src={versus}
                 alt="github"
@@ -72,6 +68,8 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  
+
   const [selectedCharacters, setSelectedCharacters] = useState([]);
   console.log("jugadores selecionador :", selectedCharacters);
 
@@ -111,9 +109,73 @@ const Works = () => {
             index={index}
             {...project}
             onSelect={() => handleCharacterSelect(project)}
-    isSelected={selectedCharacters.includes(project)} 
+            isSelected={selectedCharacters.includes(project)}
           />
         ))}
+      </div>
+
+      <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+        <motion.div
+          variants={slideIn("left", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+        >
+          <p className={styles.heroSubText}>Jouer 1</p>
+          <h3 className={styles.heroHeadText}>
+    {selectedCharacters.length >= 1 ? selectedCharacters[0].name : "Sélectionner une star "}
+  </h3>
+        </motion.div>
+        {/* <EarthCanvas /> */}
+        <motion.div
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+        >
+          <p className={styles.heroSubText}>Jouer 2</p>
+          <h3 className={styles.heroHeadText}>
+    {selectedCharacters.length === 2 ? selectedCharacters[1].name : "Sélectionner une autre star "}
+  </h3>
+        </motion.div>
+        {/* <motion.div
+  variants={slideIn("left", "tween", 0.2, 1)}
+  className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+>
+  <p className={styles.heroSubText}>Jouer 1</p>
+  {selectedCharacters.length >= 1 && (
+    <>
+      <h3 className={styles.heroHeadText}>{selectedCharacters[0].name}</h3>
+      <img src={selectedCharacters[0].image} alt={selectedCharacters[0].name} />
+    </>
+  )}
+</motion.div>
+
+<motion.div
+  variants={slideIn("right", "tween", 0.2, 1)}
+  className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+>
+  <p className={styles.heroSubText}>Jouer 2</p>
+  {selectedCharacters.length === 2 && (
+    <>
+      <h3 className={styles.heroHeadText}>{selectedCharacters[1].name}</h3>
+      <img src={selectedCharacters[1].image} alt={selectedCharacters[1].name} />
+    </>
+  )}
+</motion.div>*/}
+      </div>
+
+      <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+        <motion.div
+          variants={slideIn("left", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
+        >
+          <p className={styles.heroSubText}>Vamos a jugar</p>
+          <h3 className={styles.heroHeadText}>Commpetence</h3>
+          <button>Boton para jugarJugar</button>
+
+          <p>Resultat</p>
+          <h4>Jugador ganador</h4>
+          <img src="" alt="img del jugador ganador" />
+          
+        </motion.div>
+        
       </div>
     </>
   );

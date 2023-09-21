@@ -22,7 +22,7 @@ const App = () => {
         <div className="relative z-0 bg-primary">
           <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
             <Navbar />
-            <h1 className="text-end">Choc des starts</h1>
+            <h1 className="text-end">Choc des stars</h1>
             {/* <Hero /> */}
           </div>
           

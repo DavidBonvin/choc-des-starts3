@@ -71,6 +71,7 @@ const Works = () => {
   const [selectedCharacters, setSelectedCharacters] = useState([]);
 
   const [gameResult, setGameResult] = useState(null);
+
   console.log("jugadores selecionador :", selectedCharacters);
 
   const handleCharacterSelect = (character) => {
@@ -94,19 +95,16 @@ const Works = () => {
       setGameResult("Seleccione 2 jugadores para jugar.");
     }
   };
+
   return (
     <>
-      
-
       <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
         >
           <h3 className={styles.heroHeadText}>
-            {selectedCharacters.length >= 1
-              ? selectedCharacters[0].name
-              : " "}
+            {selectedCharacters.length >= 1 ? selectedCharacters[0].name : " "}
           </h3>
         </motion.div>
         <button
@@ -121,9 +119,7 @@ const Works = () => {
           className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
         >
           <h3 className={styles.heroHeadText}>
-            {selectedCharacters.length === 2
-              ? selectedCharacters[1].name
-              : ""}
+            {selectedCharacters.length === 2 ? selectedCharacters[1].name : ""}
           </h3>
         </motion.div>
       </div>
@@ -133,22 +129,27 @@ const Works = () => {
           variants={slideIn("left", "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-full"
         >
-          <h4 className={styles.heroHeadText}>
+          <motion.h4
+            className={styles.heroHeadText}
+            variants={slideIn("left", "tween", 0.2, 1)}
+          >
             {gameResult && (
-              <span
+              <motion.span
+                variants={slideIn("left", "tween", 0.2, 1)}
                 style={{
                   color: gameResult.result.includes("gagne") ? "red" : "black",
                 }}
               >
                 {gameResult.result}
-              </span>
+              </motion.span>
             )}
-          </h4>
+          </motion.h4>
           {gameResult && (
-            <>
+            <motion.div>
+              {/* <img src={imageUrl} alt="Ganador" />  */}
               <p>Score : {gameResult.randomA}</p>
               <p>Score : {gameResult.randomB}</p>
-            </>
+            </motion.div>
           )}
         </motion.div>
       </div>

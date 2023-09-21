@@ -1,4 +1,4 @@
-import { fadeIn, textVariant } from "../utils/motion";
+import {compareAndAnnounceWinner, fadeIn, textVariant} from "../utils/motion";
 
 import { SectionWrapper } from "../hoc";
 import { Tilt } from "react-tilt";
@@ -71,6 +71,7 @@ const Works = () => {
   
 
   const [selectedCharacters, setSelectedCharacters] = useState([]);
+  const [winner, setWinner] = useState(null); // Estado para almacenar al ganador
   console.log("jugadores selecionador :", selectedCharacters);
 
   const handleCharacterSelect = (character) => {
@@ -83,6 +84,21 @@ const Works = () => {
     } else if (selectedCharacters.length < 2) {
       // El personaje no está en la lista y hay menos de 2 seleccionados, así que lo agregamos.
       setSelectedCharacters([...selectedCharacters, character]);
+    }
+  };
+
+   // Función para manejar el clic en el botón "Boton para jugar"
+  const handlePlayButtonClick = () => {
+    // Verificar si hay exactamente 2 jugadores seleccionados
+    if (selectedCharacters.length === 2) {
+      const [player1, player2] = selectedCharacters;
+      const result = compareAndAnnounceWinner(player1.name, player2.name);
+
+      // Actualizar el estado con el resultado del juego
+      setWinner(result);
+    } else {
+      // Si no hay 2 jugadores seleccionados, mostrar un mensaje de error
+      setWinner("Seleccione 2 jugadores para jugar.");
     }
   };
   return (
@@ -168,11 +184,18 @@ const Works = () => {
         >
           <p className={styles.heroSubText}>Vamos a jugar</p>
           <h3 className={styles.heroHeadText}>Commpetence</h3>
-          <button>Boton para jugarJugar</button>
+          <button onClick={handlePlayButtonClick}>Boton para jugar</button>
 
           <p>Resultat</p>
           <h4>Jugador ganador</h4>
           <img src="" alt="img del jugador ganador" />
+          {winner && (
+            <>
+              <p>{winner}</p>
+              {/* Aquí puedes mostrar la imagen del ganador, asegúrate de tener la URL de la imagen */}
+              {/* <img src="URL_DE_LA_IMAGEN" alt="img del jugador ganador" /> */}
+            </>
+          )}
           
         </motion.div>
         

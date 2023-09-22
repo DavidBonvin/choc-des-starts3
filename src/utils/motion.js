@@ -95,11 +95,11 @@ export function compareAndAnnounceWinner(A, B) {
   // Compare the random numbers and announce the winner
   let result = "";
   if (randomA > randomB) {
-    result = `${A} A gagne !!!`;
+    result = `${A} a gagné !!!`;
   } else if (randomB > randomA) {
-    result = `${B} A gagne !!!`;
+    result = `${B} a gagné !!!`;
   } else {
-    result = "Egalité !!! ";
+    result = `${A} et ${B} en egalité !!! `;
   }
 
   // Display the random numbers for A and B along with the result

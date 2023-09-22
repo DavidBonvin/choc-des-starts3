@@ -11,9 +11,11 @@ const Hero = () => {
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
           </div>
           <div className="">
-            <h1 className={`${styles.heroHeadText} text-white`}>Salut! c'est <span className="text-[#915eff]">David</span></h1>
+            <h1 className={`${styles.heroHeadText} text-white`}>Merci  <span className="text-[#9a040942]">!!!</span></h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Je suis un développeur <br className="sm:block hidden"/> d'applications web avec un design 3D
+            Créateurs, concepteurs et développeurs innovants.  <br className="sm:block hidden"/> - David Cordoba Bonvin<br className="sm:block hidden"/> 
+- Florent Vieville<br className="sm:block hidden"/> 
+- Mamy Marcos.<br className="sm:block hidden"/>
             </p>
           </div>
       </div>

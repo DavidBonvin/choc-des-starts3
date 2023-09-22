@@ -92,7 +92,7 @@ const Works = () => {
 
       setGameResult(result);
     } else {
-      setGameResult("Seleccione 2 jugadores para jugar.");
+      setGameResult("");
     }
   };
 
@@ -137,7 +137,7 @@ const Works = () => {
               <motion.span
                 variants={slideIn("left", "tween", 0.2, 1)}
                 style={{
-                  color: gameResult.result.includes("gagne") ? "red" : "black",
+                  color: gameResult.result.includes("gagné") ? "red" : "white",
                 }}
               >
                 {gameResult.result}

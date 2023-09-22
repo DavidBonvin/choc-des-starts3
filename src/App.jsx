@@ -23,11 +23,11 @@ const App = () => {
           <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
             <Navbar />
             <h1 className="text-end">Choc des stars</h1>
-            {/* <Hero /> */}
+           
           </div>
           
           {/*<Experience /> */}
-          {/* <Tech /> */}
+          
           
           {/* <Feedbacks /> */}
           <div className="relative z-0">
@@ -35,6 +35,8 @@ const App = () => {
              <Works />
              <Contact  /> 
              <About />
+             <Tech /> 
+             <Hero />
             <StarsCanvas /> 
           </div>
         </div>

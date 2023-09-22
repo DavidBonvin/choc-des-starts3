@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { stars } from "../constants";
 import { styles } from "../styles";
+import { useMediaQuery } from 'react-responsive';
 import { useState } from "react";
 import { versus } from "../assets";
 
@@ -31,7 +32,8 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        // className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl w-full min-w-[380px] sm:w-[360px]"
       >
         <div className="relative w-full h-[320px] ">
           <img
@@ -71,6 +73,7 @@ const Works = () => {
   const [selectedCharacters, setSelectedCharacters] = useState([]);
 
   const [gameResult, setGameResult] = useState(null);
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   console.log("jugadores selecionador :", selectedCharacters);
 
@@ -169,7 +172,7 @@ const Works = () => {
           star.
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7">
+      {/* <div className="mt-20 flex flex-wrap gap-7">
         {stars.map((project, index) => (
           <ProjectCard
             key={`projec-${index}`}
@@ -179,7 +182,20 @@ const Works = () => {
             isSelected={selectedCharacters.includes(project)}
           />
         ))}
-      </div>
+      </div> */}
+      <div className="mt-20 flex gap-4 overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-600">
+  {stars.map((project, index) => (
+    <ProjectCard
+      key={`project-${index}`}
+      index={index}
+      {...project}
+      onSelect={() => handleCharacterSelect(project)}
+      isSelected={selectedCharacters.includes(project)}
+      // Define un ancho específico para las tarjetas en dispositivos móviles
+      // style={isMobile ? { minWidth: '80%' } : {}}
+    />
+  ))}
+</div>
     </>
   );
 };

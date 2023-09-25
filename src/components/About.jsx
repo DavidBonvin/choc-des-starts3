@@ -9,7 +9,7 @@ import { styles } from '../styles'
 
 const ServiceCard = ({ index, title, icon}) => {
   return (
-    <Tilt className="xs:w-[250px] w-full">
+    <Tilt className="xs:w-[250px] w-full ">
       <motion.div
       variants={fadeIn("right","spring", 0.5 * index, 0.75)}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
@@ -31,7 +31,7 @@ const ServiceCard = ({ index, title, icon}) => {
 const About = () => {
   return (
     <>
-    <motion.div variants={textVariant()}>
+    <motion.div variants={textVariant()} className='mt-5'>
       <p className={styles.sectionSubText}>Présentation</p>
       <h2 className={styles.sectionHeadText}>A propos du jeu</h2>
     </motion.div>

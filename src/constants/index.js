@@ -46,7 +46,7 @@ export const navLinks = [
    title: "Stars",
  },
  {
-   id: "contact",
+   id: "planetx",
    title: "Planète Animé",
  },
  {

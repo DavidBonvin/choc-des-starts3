@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { stars } from "../constants";
 import { styles } from "../styles";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { versus } from "../assets";
 
@@ -69,11 +69,11 @@ const ProjectCard = ({
   );
 };
 
-const Works = () => {
+const Jue = () => {
   const [selectedCharacters, setSelectedCharacters] = useState([]);
 
   const [gameResult, setGameResult] = useState(null);
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   console.log("jugadores selecionador :", selectedCharacters);
 
@@ -184,20 +184,20 @@ const Works = () => {
         ))}
       </div> */}
       <div className="mt-20 flex gap-4 overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-600">
-  {stars.map((project, index) => (
-    <ProjectCard
-      key={`project-${index}`}
-      index={index}
-      {...project}
-      onSelect={() => handleCharacterSelect(project)}
-      isSelected={selectedCharacters.includes(project)}
-      // Define un ancho específico para las tarjetas en dispositivos móviles
-      // style={isMobile ? { minWidth: '80%' } : {}}
-    />
-  ))}
-</div>
+        {stars.map((project, index) => (
+          <ProjectCard
+            key={`project-${index}`}
+            index={index}
+            {...project}
+            onSelect={() => handleCharacterSelect(project)}
+            isSelected={selectedCharacters.includes(project)}
+            // Define un ancho específico para las tarjetas en dispositivos móviles
+            // style={isMobile ? { minWidth: '80%' } : {}}
+          />
+        ))}
+      </div>
     </>
   );
 };
 
-export default SectionWrapper(Works, "cards");
+export default SectionWrapper(Jue, "cards");

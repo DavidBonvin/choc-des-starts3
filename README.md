@@ -8,8 +8,8 @@ Bienvenue dans l'application "Choc des stars" qui confronte des stars de différ
 Pour démarrer le projet, suivez les étapes ci-dessous :
 
  - Cloner le repositorio.
- - Installer les modules en exécutant la commande "yarn" dans la ligne de commande.
- - Pour lancer le serveur, exécuter "yarn dev" dans la ligne de commande.
+ - Installer les modules en exécutant la commande "yarn" ou "npm i" dans la ligne de commande.
+ - Pour lancer le serveur, exécuter "yarn run dev" dans la ligne de commande.
    
 ## Détails
 

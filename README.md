@@ -1,4 +1,4 @@
-# choc-des-starts3
+# choc-des-stars3
 
 Bienvenue dans l'application "Choc des stars" qui confronte des stars de différents domaines, tels que la musique, le cinéma, le sport, etc., dans un ring de boxe.
 

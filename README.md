@@ -35,3 +35,5 @@ L'application a été développée en utilisant les technologies suivantes :
 
 
 ### David Cordoba Bonvin,  Many Marcos et Florent Vieville   
+
+Merci 
